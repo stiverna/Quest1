@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OnKit - Online Kitoblar Olamiga Xush Kelibsiz</title>
   <style>
     body {
@@ -24,23 +24,25 @@
       display: flex;
       gap: 20px;
     }
-    .btn {
+    a.btn {
+      display: inline-block;
       padding: 15px 30px;
       font-size: 16px;
-      border: none;
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s ease;
+      text-decoration: none;
+      color: white;
+      user-select: none;
+      text-align: center;
     }
     .btn-register {
       background-color: #27ae60;
-      color: white;
     }
     .btn-login {
       background-color: #2980b9;
-      color: white;
     }
-    .btn:hover {
+    a.btn:hover {
       opacity: 0.9;
     }
   </style>
@@ -50,8 +52,8 @@
   <h1>📚 Online kitoblar olamiga xush kelibsiz!</h1>
 
   <div class="button-container">
-    <button class="btn btn-register" onclick="window.location.href='register.html'">Ro'yxatdan o‘tish</button>
-    <button class="btn btn-login" onclick="window.location.href='login.html'">Tizimga kirish</button>
+    <a href="register.html" class="btn btn-register">Ro'yxatdan o‘tish</a>
+    <a href="login.html" class="btn btn-login">Tizimga kirish</a>
   </div>
 
 </body>
