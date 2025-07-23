@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Ro'yxatdan o'tish - OnKit</title>
   <style>
     body {
@@ -18,18 +18,20 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 350px;
     }
     h2 {
       text-align: center;
       margin-bottom: 20px;
     }
-    input {
+    input, select {
       display: block;
       width: 100%;
       margin-bottom: 15px;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
+      font-size: 14px;
     }
     button {
       width: 100%;
@@ -40,6 +42,7 @@
       font-size: 16px;
       border-radius: 6px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
     button:hover {
       background-color: #219150;
@@ -49,12 +52,12 @@
 <body>
   <div class="form-container">
     <h2>Ro'yxatdan o'tish</h2>
-    <form>
-      <input type="email" placeholder="Email manzilingiz" required>
-      <input type="tel" placeholder="Telefon raqamingiz" required>
-      <input type="text" placeholder="Foydalanuvchi nomi (username)" required>
-      <input type="number" placeholder="Tug‘ilgan yilingiz" required>
-      <select required>
+    <form action="dashboard.html" method="GET">
+      <input type="email" name="email" placeholder="Email manzilingiz" required>
+      <input type="tel" name="phone" placeholder="Telefon raqamingiz" required>
+      <input type="text" name="username" placeholder="Foydalanuvchi nomi (username)" required>
+      <input type="number" name="birthyear" placeholder="Tug‘ilgan yilingiz" required min="1900" max="2025">
+      <select name="gender" required>
         <option value="">Jinsni tanlang</option>
         <option value="male">Erkak</option>
         <option value="female">Ayol</option>
