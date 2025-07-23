@@ -1,95 +1,109 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profil – OnKit</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foydalanuvchi Profili</title>
   <style>
     body {
-      font-family: sans-serif;
-      background: #eef6ff;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #f0f9ff, #e0f2ff);
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 10px 20px;
+
+    .profile-card {
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
       text-align: center;
     }
-    .profile-container {
-      max-width: 400px;
-      margin: 30px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .profile-pic {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .profile-pic img {
+
+    .profile-img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 10px;
+      border: 3px solid #27ae60;
+      margin-bottom: 15px;
     }
-    input, textarea {
+
+    h2 {
+      margin: 10px 0;
+      font-size: 24px;
+      color: #2c3e50;
+    }
+
+    p {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0;
+    }
+
+    input[type="file"],
+    input[type="text"],
+    textarea {
       width: 100%;
       padding: 10px;
-      margin: 10px 0;
+      border-radius: 8px;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      margin-bottom: 15px;
     }
-    button {
-      padding: 10px 20px;
-      background-color: #27ae60;
+
+    textarea {
+      resize: vertical;
+    }
+
+    .btn {
+      background: #2980b9;
       color: white;
+      padding: 10px 20px;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
     }
-    button:hover {
-      background-color: #219150;
+
+    .btn:hover {
+      background: #3498db;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h2>Profil sahifasi</h2>
-  </header>
+  <div class="profile-card">
+    <img src="https://placehold.co/120x120" alt="Profil rasmi" class="profile-img" id="preview">
 
-  <div class="profile-container">
-    <div class="profile-pic">
-      <img src="https://via.placeholder.com/120" alt="Profil rasmi" id="profileImage">
-      <input type="file" accept="image/*" onchange="previewImage(event)">
-    </div>
+    <input type="file" accept="image/*" onchange="loadImage(event)">
+    
+    <h2>Ismingizni kiriting</h2>
+    <input type="text" placeholder="Masalan: Diyorbek">
 
-    <input type="text" placeholder="Ismingiz" id="nameInput">
-    <textarea rows="4" placeholder="BIO yozing..." id="bioInput"></textarea>
+    <h2>Bio</h2>
+    <textarea placeholder="O‘zingiz haqingizda qisqacha yozing..."></textarea>
 
-    <button onclick="saveProfile()">Profilni saqlash</button>
+    <p><strong>Email:</strong> foydalanuvchi@example.com</p>
+    <p><strong>Telefon:</strong> +998 90 123 45 67</p>
+    <p><strong>Username:</strong> stiverna</p>
+    <p><strong>Yosh:</strong> 19</p>
+    <p><strong>Jins:</strong> Erkak</p>
+
+    <button class="btn">Saqlash</button>
   </div>
 
   <script>
-    function previewImage(event) {
-      const reader = new FileReader();
-      reader.onload = function(){
-        const img = document.getElementById('profileImage');
-        img.src = reader.result;
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    }
-
-    function saveProfile() {
-      const name = document.getElementById('nameInput').value;
-      const bio = document.getElementById('bioInput').value;
-      alert(`Ismingiz: ${name}\nBIO: ${bio}\n(Hozircha faqat ko‘rinish uchun!)`);
+    function loadImage(event) {
+      const output = document.getElementById('preview');
+      output.src = URL.createObjectURL(event.target.files[0]);
     }
   </script>
 
