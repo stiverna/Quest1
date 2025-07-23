@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>OnKit – Ishchi oyna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       margin: 0;
@@ -15,6 +16,7 @@
       color: white;
       padding: 15px;
       text-align: center;
+      position: relative;
     }
 
     h3 {
@@ -96,12 +98,13 @@
 <body>
 
   <header>
-    <button class="menu-btn" onclick="toggleMenu()">Menu ☰</button>
+    <h2>📚 OnKit</h2>
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
     <div class="menu" id="menu">
       <a href="#">🌙 Dark</a>
       <a href="#">☀️ Light</a>
-      <a href="#">👤 Profil</a>
-      <a href="#">🚪 Log out</a>
+      <a href="profil.html">👤 Profil</a>
+      <a href="index.html">🚪 Log out</a>
       <a href="#">🌐 Language</a>
       <a href="#">👥 Do‘stlarni taklif qilish</a>
     </div>
@@ -128,7 +131,22 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    // Menu tashqarisiga bosilsa yopilsin
+    document.addEventListener("click", function (e) {
+      const menu = document.getElementById("menu");
+      const btn = document.querySelector(".menu-btn");
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+
+    // Username chiqarish
+    const username = localStorage.getItem("onkit_username");
+    if (username) {
+      document.getElementById("username").textContent = username;
     }
   </script>
 
