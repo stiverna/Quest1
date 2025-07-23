@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OnKit - Online Kitoblar</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OnKit - Online Kitoblar Olamiga Xush Kelibsiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #c0d8ff, #f2f9ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      color: #2c3e50;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .button-container {
+      display: flex;
+      gap: 20px;
+    }
+    .btn {
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .btn-register {
+      background-color: #27ae60;
+      color: white;
+    }
+    .btn-login {
+      background-color: #2980b9;
+      color: white;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>📚 Online kitoblar olamiga hush kelibsiz 😊</h1>
-    <div class="btn-group">
-      <a href="#" class="btn" id="registerBtn">Ruyhatdan o‘tish</a>
-      <a href="#" class="btn" id="loginBtn">Tizimga kirish</a>
-    </div>
+
+  <h1>📚 Online kitoblar olamiga xush kelibsiz!</h1>
+
+  <div class="button-container">
+    <button class="btn btn-register" onclick="window.location.href='register.html'">Ro'yxatdan o‘tish</button>
+    <button class="btn btn-login" onclick="window.location.href='login.html'">Tizimga kirish</button>
   </div>
 
-  <script src="script.js"></script>
 </body>
 </html>
