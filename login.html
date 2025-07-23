@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Tizimga kirish - OnKit</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #eef7ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2980b9;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2471a3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Tizimga kirish</h2>
+    <form>
+      <input type="email" placeholder="Email manzilingiz" required>
+      <input type="tel" placeholder="Telefon raqamingiz" required>
+      <input type="text" placeholder="Foydalanuvchi nomi (username)" required>
+      <button type="submit">Davom etish</button>
+    </form>
+  </div>
+</body>
+</html>
