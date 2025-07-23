@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Ro'yxatdan o'tish - OnKit</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f9ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #27ae60;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #219150;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Ro'yxatdan o'tish</h2>
+    <form>
+      <input type="email" placeholder="Email manzilingiz" required>
+      <input type="tel" placeholder="Telefon raqamingiz" required>
+      <input type="text" placeholder="Foydalanuvchi nomi (username)" required>
+      <input type="number" placeholder="Tug‘ilgan yilingiz" required>
+      <select required>
+        <option value="">Jinsni tanlang</option>
+        <option value="male">Erkak</option>
+        <option value="female">Ayol</option>
+        <option value="other">Aniq emas</option>
+      </select>
+      <button type="submit">Davom etish</button>
+    </form>
+  </div>
+</body>
+</html>
