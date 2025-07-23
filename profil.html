@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profil – OnKit</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #eef6ff;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .profile-container {
+      max-width: 400px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .profile-pic {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .profile-pic img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #219150;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Profil sahifasi</h2>
+  </header>
+
+  <div class="profile-container">
+    <div class="profile-pic">
+      <img src="https://via.placeholder.com/120" alt="Profil rasmi" id="profileImage">
+      <input type="file" accept="image/*" onchange="previewImage(event)">
+    </div>
+
+    <input type="text" placeholder="Ismingiz" id="nameInput">
+    <textarea rows="4" placeholder="BIO yozing..." id="bioInput"></textarea>
+
+    <button onclick="saveProfile()">Profilni saqlash</button>
+  </div>
+
+  <script>
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function(){
+        const img = document.getElementById('profileImage');
+        img.src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+
+    function saveProfile() {
+      const name = document.getElementById('nameInput').value;
+      const bio = document.getElementById('bioInput').value;
+      alert(`Ismingiz: ${name}\nBIO: ${bio}\n(Hozircha faqat ko‘rinish uchun!)`);
+    }
+  </script>
+
+</body>
+</html>
