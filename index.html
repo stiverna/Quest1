@@ -1,120 +1,121 @@
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-  <meta charset="UTF-8">
-  <title>OnKit - Online kitoblar olami</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background: #f0f4f8;
-    }
+<!DOCTYPE html>  <html lang="uz">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <title>OnKit - Online Kitoblar Olamiga Xush Kelibsiz</title>  
+  <style>  
+    * {  
+      box-sizing: border-box;  
+    }  body {  
+  font-family: 'Segoe UI', sans-serif;  
+  background: linear-gradient(to right, #c0d8ff, #f2f9ff);  
+  margin: 0;  
+  padding: 0;  
+  display: flex;  
+  flex-direction: column;  
+  min-height: 100vh;  
+}  
 
-    header {
-      background-color: #0077cc;
-      color: white;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+header {  
+  background-color: #34495e;  
+  color: white;  
+  padding: 15px 20px;  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);  
+}  
 
-    .nav-buttons a {
-      color: white;
-      margin-left: 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+header h1 {  
+  margin: 0;  
+  font-size: 22px;  
+}  
 
-    .hero {
-      text-align: center;
-      padding: 50px 20px;
-    }
+nav a {  
+  color: white;  
+  text-decoration: none;  
+  margin-left: 20px;  
+  font-weight: 500;  
+  transition: 0.3s ease;  
+}  
 
-    .hero h2 {
-      font-size: 28px;
-      margin-bottom: 30px;
-    }
+nav a:hover {  
+  text-decoration: underline;  
+}  
 
-    .hero-buttons a {
-      text-decoration: none;
-      color: white;
-      background: #0077cc;
-      padding: 12px 25px;
-      border-radius: 6px;
-      margin: 10px;
-      display: inline-block;
-    }
+main {  
+  flex: 1;  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+  justify-content: center;  
+  text-align: center;  
+  padding: 40px 20px;  
+}  
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #e0e0e0;
-      margin-top: 40px;
-    }
+main h2 {  
+  font-size: 28px;  
+  color: #2c3e50;  
+  margin-bottom: 30px;  
+}  
 
-    /* Qidiruv stili */
-    .search-container {
-      text-align: center;
-      margin: 30px auto;
-      max-width: 600px;
-    }
+.button-container {  
+  display: flex;  
+  flex-wrap: wrap;  
+  gap: 20px;  
+  justify-content: center;  
+}  
 
-    #searchInput {
-      padding: 10px;
-      width: 80%;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+a.btn {  
+  padding: 15px 30px;  
+  font-size: 16px;  
+  border-radius: 8px;  
+  cursor: pointer;  
+  transition: 0.3s ease;  
+  text-decoration: none;  
+  color: white;  
+  user-select: none;  
+  text-align: center;  
+  min-width: 160px;  
+}  
 
-    #searchResults {
-      margin-top: 20px;
-      text-align: left;
-      padding: 10px;
-      background: #fff;
-      border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
+.btn-register {  
+  background-color: #27ae60;  
+}  
 
-    .result-item {
-      padding: 10px;
-      border-bottom: 1px solid #eee;
-    }
+.btn-login {  
+  background-color: #2980b9;  
+}  
 
-    .result-item:last-child {
-      border-bottom: none;
-    }
-  </style>
-</head>
-<body>
+a.btn:hover {  
+  opacity: 0.9;  
+  transform: scale(1.03);  
+}  
 
-  <header>
-    <div><strong>📚 OnKit</strong></div>
-    <div class="nav-buttons">
-      <a href="profil">👤 Profil</a>
-      <a href="#">📝 Ro'yxatdan o'tish</a>
-      <a href="#">🔐 Tizimga kirish</a>
-    </div>
-  </header>
+footer {  
+  text-align: center;  
+  padding: 10px;  
+  background: #ecf0f1;  
+  color: #333;  
+  font-size: 14px;  
+}
 
-  <div class="hero">
-    <h2>Online kitoblar olamiga xush kelibsiz!</h2>
-    <div class="hero-buttons">
-      <a href="#">Ro'yxatdan o‘tish</a>
-      <a href="#">Tizimga kirish</a>
-    </div>
-  </div>
-
-  <!-- Qidiruv bo‘limi -->
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Kitob nomi yoki matn kiriting...">
-    <div id="searchResults"></div>
-  </div>
-
-  <footer>
-    © 2025 OnKit. Barcha huquqlar himoyalangan.
-  </footer>
-
-  <script src="search.js"></script>
-</body>
-</html>
+  </style>  
+</head>  
+<body>    <header>  
+    <h1>📚 OnKit</h1>  
+    <nav>  
+      <a href="profil.html">👤 Profil</a>  
+      <a href="register.html">📝 Ro'yxatdan o'tish</a>  
+      <a href="login.html">🔐 Tizimga kirish</a>  
+    </nav>  
+  </header>    <main>  
+    <h2>Online kitoblar olamiga xush kelibsiz!</h2>  
+    <div class="button-container">  
+      <a href="register.html" class="btn btn-register">Ro'yxatdan o‘tish</a>  
+      <a href="login.html" class="btn btn-login">Tizimga kirish</a>  
+    </div>  
+  </main>    <footer>  
+    © 2025 OnKit. Barcha huquqlar himoyalangan.  
+  </footer>  </body>  
+</html> mana hozrgi index.html 
