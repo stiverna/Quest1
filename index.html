@@ -2,87 +2,119 @@
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
-  <title>📚 OnKit</title>
+  <title>OnKit - Online kitoblar olami</title>
   <style>
     body {
       font-family: sans-serif;
-      background: #f0f9ff;
       margin: 0;
-      padding: 0;
+      background: #f0f4f8;
     }
 
     header {
       background-color: #0077cc;
       color: white;
-      padding: 1rem;
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-
-    nav a {
+    .nav-buttons a {
       color: white;
+      margin-left: 15px;
       text-decoration: none;
-      margin-left: 1rem;
       font-weight: bold;
     }
 
-    main {
-      padding: 2rem;
+    .hero {
       text-align: center;
+      padding: 50px 20px;
     }
 
-    .buttons {
-      margin-top: 2rem;
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
     }
 
-    .buttons a {
-      background-color: #0077cc;
-      color: white;
+    .hero-buttons a {
       text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
-      margin: 0 0.5rem;
+      color: white;
+      background: #0077cc;
+      padding: 12px 25px;
+      border-radius: 6px;
+      margin: 10px;
       display: inline-block;
     }
 
     footer {
-      background-color: #eee;
       text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
+      padding: 20px;
+      background: #e0e0e0;
+      margin-top: 40px;
+    }
+
+    /* Qidiruv stili */
+    .search-container {
+      text-align: center;
+      margin: 30px auto;
+      max-width: 600px;
+    }
+
+    #searchInput {
+      padding: 10px;
+      width: 80%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    #searchResults {
+      margin-top: 20px;
+      text-align: left;
+      padding: 10px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .result-item {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .result-item:last-child {
+      border-bottom: none;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>📚 OnKit</h1>
-    <nav>
+    <div><strong>📚 OnKit</strong></div>
+    <div class="nav-buttons">
       <a href="#">👤 Profil</a>
       <a href="#">📝 Ro'yxatdan o'tish</a>
       <a href="#">🔐 Tizimga kirish</a>
-    </nav>
+    </div>
   </header>
 
-  <main>
+  <div class="hero">
     <h2>Online kitoblar olamiga xush kelibsiz!</h2>
-
-    <div class="buttons">
+    <div class="hero-buttons">
       <a href="#">Ro'yxatdan o‘tish</a>
       <a href="#">Tizimga kirish</a>
     </div>
-  </main>
+  </div>
+
+  <!-- Qidiruv bo‘limi -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Kitob nomi yoki matn kiriting...">
+    <div id="searchResults"></div>
+  </div>
 
   <footer>
     © 2025 OnKit. Barcha huquqlar himoyalangan.
   </footer>
 
-  <!-- Faqat shu qator qo‘shildi -->
   <script src="search.js"></script>
 </body>
 </html>
